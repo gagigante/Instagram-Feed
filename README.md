@@ -31,7 +31,7 @@
 <br>
 
 <p align="center">
-  <img alt="Frontend" src=".github/frontend.gif" width="100%">
+  <img alt="Frontend" src=".github/frontend.gif" width="300px">
 </p>
 
 ## :rocket: Tecnologies
