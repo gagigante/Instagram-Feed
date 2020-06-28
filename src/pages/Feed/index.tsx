@@ -30,26 +30,29 @@ export default function Feed() {
   const [refreshing, setRefreshing] = useState(false);
   const [viewable, setViewable] = useState<Object[]>([]);
 
-  async function loadPage(pageNumber = page, shouldRefresh = false) {
-    if (total && pageNumber > total) {
-      return;
-    }
+  const loadPage = useCallback(
+    async (pageNumber = page, shouldRefresh = false) => {
+      if (total && pageNumber > total) {
+        return;
+      }
 
-    setLoading(true);
+      setLoading(true);
 
-    const response = await fetch(
-      `http://10.0.2.2:3333/feed?_expand=author&_limit=5&_page=${pageNumber}`,
-    );
+      const response = await fetch(
+        `http://10.0.2.2:3333/feed?_expand=author&_limit=5&_page=${pageNumber}`,
+      );
 
-    const totalItens = response.headers.get('X-Total-Count');
-    const data = await response.json();
+      const totalItens = response.headers.get('X-Total-Count');
+      const data = await response.json();
 
-    setLoading(false);
-    setTotal(Math.floor(totalItens / 4));
-    setPage(pageNumber + 1);
+      setLoading(false);
+      setTotal(Math.floor(totalItens / 4));
+      setPage(pageNumber + 1);
 
-    setFeed(shouldRefresh ? data : [...feed, ...data]);
-  }
+      setFeed(shouldRefresh ? data : [...feed, ...data]);
+    },
+    [feed, page, total],
+  );
 
   const refreshList = useCallback(async () => {
     setRefreshing(true);
