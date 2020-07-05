@@ -14,8 +14,8 @@
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/gagigante/Instagram-Feed">
   </a>
 
-  <a href="https://github.com/gagigante/Omnistack10-Devradar/issues">
-    <img alt="Repository issues" src="https://img.shields.io/github/issues/gagigante/Omnistack10-Devradar">
+  <a href="https://github.com/gagigante/Instagram-Feed/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/gagigante/Instagram-Feed">
   </a>
 
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
